@@ -10,18 +10,19 @@ int main(){
   auto start = chrono::high_resolution_clock::now();
     double result = 0.0;
     //addition
-    for(int i = 0; i < pow(10,10);i++){
+    for(double i = 0; i < pow(10,10);i++){
         result +=0.05;
     }
     //multiplication
-    for(int i = 0; i < pow(10,10);i++){
+    for(double j = 0; j < (5 * pow(10,9));j++){
         result =0.05;
         result*= 0.5;
     }
     //division
-    for(int i = 0; i < pow(10,10);i++){
+    for(double k = 0; k < (2 * pow(10,9));k++){
         result = 500000.5;
-        result/=.025;
+        result/=.25;
     }
+
 
 }

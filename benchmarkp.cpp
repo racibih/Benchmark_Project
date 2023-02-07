@@ -22,6 +22,9 @@ o Write 109 bytes to a file, 10000 bytes each time
 
 using namespace std;
 chrono::nanoseconds additions(int);
+chrono::nanoseconds multiplies(int);
+chrono::nanoseconds divides(int);
+
 int main(){
 //32 bit integer operation
 //o 1010 additions (of integer constants)
@@ -36,6 +39,40 @@ int main(){
 }
 
 chrono::nanoseconds additions(int referencetime){
+    auto start = std::chrono::high_resolution_clock::now();
+    int times = pow(10,10);
+    int sum = 0;
+     for (int i=0; i < times; i++){
+        sum+=i;
+        auto end = chrono::high_resolution_clock::now();
+        auto duration = chrono::duration_cast<chrono::nanoseconds>(end-start);
+        if(duration.count() > referencetime){
+            break;
+        }
+
+    }
+    auto end = chrono::high_resolution_clock::now();
+    auto duration = chrono::duration_cast<chrono::nanoseconds>(end - start);
+  return duration;
+}
+chrono::nanoseconds multiplies(int referencetime){
+    auto start = std::chrono::high_resolution_clock::now();
+    int times = pow(10,10);
+    int sum = 0;
+     for (int i=0; i < times; i++){
+        sum+=i;
+        auto end = chrono::high_resolution_clock::now();
+        auto duration = chrono::duration_cast<chrono::nanoseconds>(end-start);
+        if(duration.count() > referencetime){
+            break;
+        }
+
+    }
+    auto end = chrono::high_resolution_clock::now();
+    auto duration = chrono::duration_cast<chrono::nanoseconds>(end - start);
+  return duration;
+}
+chrono::nanoseconds divisions(int referencetime){
     auto start = std::chrono::high_resolution_clock::now();
     int times = pow(10,10);
     int sum = 0;

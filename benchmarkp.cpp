@@ -16,14 +16,20 @@ o Read a whole file of 109 bytes, 10000 bytes each time
 o Write 109 bytes to a file, 10000 bytes each time
 
 */
+#include <iostream>
+#include <cmath>
 
-//32 bit integer operation
-//64 bit float operation
-// memory benchmark
-//hard drive benchmark 1
-// hard drive benchmark 2
+using namespace std;
+
 int main(){
-
+//32 bit integer operation
+//o 1010 additions (of integer constants)
+// 5 × 109 multiplication (of integer constants)
+// 2 × 109 division (of integer constants)
+    int times = pow(10,10);
+    int sum =0;
+    int a = 0;
+    int b = 0;
 
 
     return 0;

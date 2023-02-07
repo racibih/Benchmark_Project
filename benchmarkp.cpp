@@ -21,9 +21,9 @@ test
 #include <chrono>
 
 using namespace std;
-chrono::nanoseconds addition_op(double);
-chrono::nanoseconds multiplication_op(double);
-chrono::nanoseconds division_op(double);
+int addition_op();
+int multiplication_op();
+int division_op();
 
 int main(){
 //32 bit integer operation
@@ -40,56 +40,34 @@ int main(){
     return 0;
 }
 
-chrono::nanoseconds addition_op(double referencetime){
+int addition_op(){
     double times = (unsigned) pow(10,10);
     int sum = 0;
      for (int i=0; i < times; i++){
-        sum+=i;
-        auto end = chrono::high_resolution_clock::now();
-        auto duration = chrono::duration_cast<chrono::nanoseconds>(end-start);
-        if(duration.count() > referencetime){
-            break;
-        }
+        sum+=1;
 
     }
-    auto end = chrono::high_resolution_clock::now();
-    auto duration = chrono::duration_cast<chrono::nanoseconds>(end - start);
-  return duration;
+  return sum;
 }
-chrono::nanoseconds multiplication_op(double referencetime){
-    auto start = std::chrono::high_resolution_clock::now();
+int multiplication_op(){
     double times = (unsigned) 5* pow(10,9);
     int total = 1;
     
      for (int i=0; i < times; i++){
-        total*=i;
-        auto end = chrono::high_resolution_clock::now();
-        auto duration = chrono::duration_cast<chrono::nanoseconds>(end-start);
-        if(duration.count() > referencetime){
-            break;
-        }
-     
+        total*=2;
     }
-    auto end = chrono::high_resolution_clock::now();
-    auto duration = chrono::duration_cast<chrono::nanoseconds>(end - start);
-  return duration;
+   
+  return total;
 }
-chrono::nanoseconds division_op(double referencetime){
-    auto start = std::chrono::high_resolution_clock::now();
+int division_op(){
     double times = (unsigned) 2* pow(10,10);
-    int a = 33;
-    int b = 66;
+    int result = 444;
+   
     int result = 0;
      for (int i=0; i < times; i++){
-        result= a/b;
-        auto end = chrono::high_resolution_clock::now();
-        auto duration = chrono::duration_cast<chrono::nanoseconds>(end-start);
-        if(duration.count() > referencetime){
-            break;
-        }
+        result /= 2;
+       
 
     }
-    auto end = chrono::high_resolution_clock::now();
-    auto duration = chrono::duration_cast<chrono::nanoseconds>(end - start);
-  return duration;
+   return result;
 }

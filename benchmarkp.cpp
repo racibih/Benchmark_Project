@@ -31,10 +31,17 @@ int main(){
 // 5 × 109 multiplication (of integer constants)
 // 2 × 109 division (of integer constants)
     double referencetime = (unsigned)100 * 1000000000; //100 seconds converted to nano
+        auto start = chrono::high_resolution_clock::now();
+
     int sum =0;
-    int product=1;
-    int a= 22;
-    int b= 44;
+    int product=0;
+    int total=0;
+    sum = addition_op();
+    product = multiplication_op();
+    total = division_op();
+        auto end = chrono::high_resolution_clock::now();
+        auto duration = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
+
    cout<< "Division Time Taken: " <<add_duration.count()<< " nanoseconds"<<endl;
 
     return 0;

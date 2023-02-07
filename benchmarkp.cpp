@@ -37,7 +37,10 @@ int main(){
     auto mul_duration = multipl(referencetime);
     auto div_duration = divisions(referencetime);
 
-    cout<< "Time Taken: " <<add_duration.count()<< " nanoseconds"<<endl;
+    cout<< "Addition Time Taken: " <<add_duration.count()<< " nanoseconds"<<endl;
+    cout<< "Multiplication Time Taken: " <<add_duration.count()<< " nanoseconds"<<endl;
+    cout<< "Division Time Taken: " <<add_duration.count()<< " nanoseconds"<<endl;
+
     return 0;
 }
 

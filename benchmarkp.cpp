@@ -57,16 +57,17 @@ chrono::nanoseconds additions(int referencetime){
 }
 chrono::nanoseconds multiplies(int referencetime){
     auto start = std::chrono::high_resolution_clock::now();
-    int times = pow(10,10);
-    int sum = 0;
+    int times = pow(10,9);
+    int total = 1;
+    for (int j =0; j < 5; j++){
      for (int i=0; i < times; i++){
-        sum+=i;
+        total*=i;
         auto end = chrono::high_resolution_clock::now();
         auto duration = chrono::duration_cast<chrono::nanoseconds>(end-start);
         if(duration.count() > referencetime){
             break;
         }
-
+     }
     }
     auto end = chrono::high_resolution_clock::now();
     auto duration = chrono::duration_cast<chrono::nanoseconds>(end - start);

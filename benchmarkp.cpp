@@ -22,7 +22,7 @@ o Write 109 bytes to a file, 10000 bytes each time
 
 using namespace std;
 chrono::nanoseconds additions(int);
-chrono::nanoseconds multiplies(int);
+chrono::nanoseconds multipl(int);
 chrono::nanoseconds divides(int);
 
 int main(){

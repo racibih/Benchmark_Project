@@ -23,6 +23,13 @@ int main(){
         result = 500000.5;
         result/=.25;
     }
+  auto end = chrono::high_resolution_clock::now();
+  auto duration = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
+
+    cout<< "Execution Time:" <<duration<< " nanoseconds"<<endl;
+    cout<< "Execution Time: " <<duration/1000000000 << " seconds"<<endl;
+
+    return 0;
 
 
 }

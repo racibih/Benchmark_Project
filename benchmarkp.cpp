@@ -33,8 +33,11 @@ int main(){
     int referencetime = 100 * 1000000000; //100 seconds converted to nano
 
    
-    auto op1_duration = additions(referencetime);
-    cout<< "Time Taken: " <<op1_duration.count()<< " nanoseconds"<<endl;
+    auto add_duration = additions(referencetime);
+    auto mul_duration = multipl(referencetime);
+    auto div_duration = divisions(referencetime);
+
+    cout<< "Time Taken: " <<add_duration.count()<< " nanoseconds"<<endl;
     return 0;
 }
 
@@ -55,7 +58,7 @@ chrono::nanoseconds additions(int referencetime){
     auto duration = chrono::duration_cast<chrono::nanoseconds>(end - start);
   return duration;
 }
-chrono::nanoseconds multiplies(int referencetime){
+chrono::nanoseconds multipl(int referencetime){
     auto start = std::chrono::high_resolution_clock::now();
     int times = 5* pow(10,9);
     int total = 1;

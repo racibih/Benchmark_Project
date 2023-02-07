@@ -27,14 +27,11 @@ int main(){
 //o 1010 additions (of integer constants)
 // 5 × 109 multiplication (of integer constants)
 // 2 × 109 division (of integer constants)
-    auto start = chrono::high_resolution_clock::now();
     int referencetime = 100 * 1000000000; //100 seconds converted to nano
-    int sum =0;
-  
+
    
-    auto end = chrono::high_resolution_clock::now();
-    auto duration = chrono::duration_cast<chrono::nanoseconds>(end-start);
-    
+    auto op1_duration = additions(referencetime);
+    cout<< "Time Taken: " <<op1_duration.count()<< " nanoseconds"<<endl;
     return 0;
 }
 

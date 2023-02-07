@@ -49,5 +49,9 @@ chrono::nanoseconds additions(int referencetime){
         if(duration.count() > referencetime){
             break;
         }
+
     }
+    auto end = chrono::high_resolution_clock::now();
+    auto duration = chrono::duration_cast<chrono::nanoseconds>(end - start);
+  return duration;
 }

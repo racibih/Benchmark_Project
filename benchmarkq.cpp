@@ -9,6 +9,15 @@ using namespace std;
 int main(){
   auto start = chrono::high_resolution_clock::now();
     double result = 0.0;
+    //addition
+    for(int i = 0; i < pow(10,10);i++){
+        result +=0.05;
+    }
+    //multiplication
+    for(int i = 0; i < pow(10,10);i++){
+        result +=0.05;
+    }
+    //division
     for(int i = 0; i < pow(10,10);i++){
         result +=0.05;
     }

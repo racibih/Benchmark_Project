@@ -18,20 +18,23 @@ o Write 109 bytes to a file, 10000 bytes each time
 */
 #include <iostream>
 #include <cmath>
+#include <chrono>
 
 using namespace std;
-
 int main(){
 //32 bit integer operation
 //o 1010 additions (of integer constants)
 // 5 × 109 multiplication (of integer constants)
 // 2 × 109 division (of integer constants)
+    auto start = chrono::high_resolution_clock::now();
     int times = pow(10,10);
     int sum =0;
   
     for (int i=0; i < times; i++){
         sum+=i;
     }
-
+    auto end = chrono::high_resolution_clock::now();
+    auto duration = chrono::duration_cast<chrono::nanoseconds>(end-start);
+    
     return 0;
 }

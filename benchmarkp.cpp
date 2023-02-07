@@ -28,9 +28,10 @@ int main(){
 // 2 × 109 division (of integer constants)
     int times = pow(10,10);
     int sum =0;
-    int a = 0;
-    int b = 0;
-
+  
+    for (int i=0; i < times; i++){
+        sum+=i;
+    }
 
     return 0;
 }

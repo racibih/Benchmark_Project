@@ -15,11 +15,13 @@ int main(){
     }
     //multiplication
     for(int i = 0; i < pow(10,10);i++){
-        result +=0.05;
+        result =0.05;
+        result*= 0.5;
     }
     //division
     for(int i = 0; i < pow(10,10);i++){
-        result +=0.05;
+        result = 500000.5;
+        result/=.025;
     }
 
 }

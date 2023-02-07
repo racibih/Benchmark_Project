@@ -75,10 +75,12 @@ chrono::nanoseconds multiplies(int referencetime){
 }
 chrono::nanoseconds divisions(int referencetime){
     auto start = std::chrono::high_resolution_clock::now();
-    int times = pow(10,10);
-    int sum = 0;
+    int times = 2* pow(10,10);
+    int a = 33;
+    int b = 66;
+    int result = 0;
      for (int i=0; i < times; i++){
-        sum+=i;
+        result= a/b;
         auto end = chrono::high_resolution_clock::now();
         auto duration = chrono::duration_cast<chrono::nanoseconds>(end-start);
         if(duration.count() > referencetime){

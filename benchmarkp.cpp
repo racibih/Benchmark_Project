@@ -36,13 +36,15 @@ int main(){
     int sum =0;
     int product=0;
     int total=0;
+    
     sum = addition_op();
     product = multiplication_op();
     total = division_op();
         auto end = chrono::high_resolution_clock::now();
         auto duration = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
 
-   cout<< "Division Time Taken: " <<add_duration.count()<< " nanoseconds"<<endl;
+   cout<< "Execution Time:" <<duration<< " nanoseconds"<<endl;
+    cout<< "Execution Time: " <<duration/1000000000 << " seconds"<<endl;
 
     return 0;
 }

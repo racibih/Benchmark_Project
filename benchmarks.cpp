@@ -14,6 +14,10 @@ int main(){
     // Read file
     char buffer[bfr_sz];
     ifstream file("testfile.bin", ios::binary);
-
+    int count = 0;
+    while (count < file_sz) {
+        file.read(buffer, bfr_sz);
+        count += file.gcount();
+    }
 return 0;
 }

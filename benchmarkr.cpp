@@ -10,13 +10,16 @@ const int element_size = 4; // adjust the size to include 4 bytes per element
 
 int main(){
     char *arr = new char[x*element_size];
-    //filling array
-      for (int i = 0; i < x * element_size; i++) {
-    arr[i] = i % 256; //ascii character
-  }
+   
   //start
     auto start = chrono::high_resolution_clock::now();
-
-
+    for(int i = 0; i < x;i++){
+    char byte1 = arr[i * element_size];
+    char byte2 = arr[i * element_size + 1];
+    char byte3 = arr[i * element_size + 2];
+    char byte4 = arr[i * element_size + 3];
+    }
+    auto end = std::chrono::high_resolution_clock::now();
+    auto elapsed_time = end - start;
 return 0;
 }

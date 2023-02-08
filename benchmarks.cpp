@@ -27,5 +27,9 @@ int main(){
         outfile.write(buffer, bfr_sz);
         wcount += bfr_sz;
     }
+auto stop = chrono::high_resolution_clock::now();
+auto duration = chrono::duration_cast<chrono::nanoseconds>(stop - start);
+
+cout << "Execution time: "<< duration.count() << "seconds" << endl;
 return 0;
 }

@@ -19,5 +19,13 @@ int main(){
         file.read(buffer, bfr_sz);
         count += file.gcount();
     }
+
+    // Write file
+    ofstream outfile("testfile.bin", ios::binary);
+    int wcount = 0;
+    while (wcount < file_sz) {
+        outfile.write(buffer, bfr_sz);
+        wcount += bfr_sz;
+    }
 return 0;
 }

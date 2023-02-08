@@ -5,11 +5,11 @@ using namespace std;
 /*Memory benchmark (reference time: 100 seconds)
 o Read from 5 × 10^9 different array elements, 4 bytes each time
 o Write to 5 × 10^9 different array elements, 4 bytes each time*/
-const int x =  5e9;
+const long long x =  5e9;
 const int element_size = 4; // adjust the size to include 4 bytes per element
 
 int main(){
-    char *arr = new char[x*element_size];
+    char *arr =  (char*)malloc(x*element_size);
    
   //start
     auto start = chrono::high_resolution_clock::now();
@@ -29,7 +29,7 @@ int main(){
     }
     auto end = chrono::high_resolution_clock::now();
     auto elapsed_time = end - start;
-    cout<< "Execution time: " << chrono::duration_cast<::chrono::seconds>(elapsed_time).count()<< " seconds"<<endl;
+    cout<< "Execution time: " << chrono::duration_cast<chrono::seconds>(elapsed_time).count()<< " seconds"<<endl;
     delete[] arr;
 return 0;
 }

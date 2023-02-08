@@ -22,12 +22,12 @@ int main(){
     }
     //Writing 4 bytes to an array
      for(int j = 0; j < x;j++){
-    arr[j * element_size] - 0;
-    arr[j * element_size + 1] -0;
-    arr[j * element_size + 2]-0;
-    arr[j * element_size + 3]-0;
+    arr[j * element_size]  = 0;
+    arr[j * element_size + 1] =0;
+    arr[j * element_size + 2]=0;
+    arr[j * element_size + 3]=0;
     }
-    auto end = std::chrono::high_resolution_clock::now();
+    auto end = chrono::high_resolution_clock::now();
     auto elapsed_time = end - start;
     cout<< "Execution time: " << chrono::duration_cast<::chrono::seconds>(elapsed_time).count()<< " seconds"<<endl;
     delete[] arr;

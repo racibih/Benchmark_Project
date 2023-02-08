@@ -30,6 +30,6 @@ int main(){
 auto stop = chrono::high_resolution_clock::now();
 auto duration = chrono::duration_cast<chrono::nanoseconds>(stop - start);
 
-cout << "Execution time: "<< duration.count() << "seconds" << endl;
+cout << "Execution time: "<< duration.count() << "nanoseconds" << endl;
 return 0;
 }
